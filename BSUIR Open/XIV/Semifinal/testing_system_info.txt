@@ -1,0 +1,3 @@
+url: https://solve.bsuir.by/
+login: 4325/semi-xiv-7C2607
+password: 3528519dc241f80b
