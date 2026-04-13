@@ -1,0 +1,3 @@
+url: https://ejudge.algocourses.ru/cgi-bin/new-client?contest_id=81011
+login: kod-sporta26-tomsk-12
+password: Pq14RFAXPv
