@@ -1,0 +1,3 @@
+url: https://ejudge.rucode.net/rucode26-CD-final
+login: rucode2026-finals-0692
+password: RybuwEpuBY
