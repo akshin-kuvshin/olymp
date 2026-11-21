@@ -26,5 +26,5 @@ void solve() {
     int tmp;
 	for (int _ = 0; _ < m; ++_)
 		cin >> tmp >> tmp;
-	cout << ((k * n) % 2 == 0 ? "YES" : "NO") << '\n';
+	cout << ((k * n) & 1 ? "NO" : "YES") << '\n';
 }

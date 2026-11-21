@@ -27,7 +27,7 @@ void solve() {
 		s;
 	cin >> n >> m >> a >> b >> s;
 
-	s %= 2LL * (n + m);
+	s %= (n + m) << 1;
 
 	lli va = a,
 		vb = b,

@@ -47,7 +47,7 @@ void solve() {
 		}
 		int leaves = 0;
 		dfs(v, G, used, leaves);
-		ans += (leaves + 1) / 2;
+		ans += (leaves + 1) >> 1;
 	}
 
 	cout << ans << '\n';
