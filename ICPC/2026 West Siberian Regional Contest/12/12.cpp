@@ -84,7 +84,7 @@ lli cnt0(num& n, lli i) {
     i_res *= sign; sign *= -1LL;
     res += i_res;
 
-    if (i > 0LL and i & 1LL) {
+    if (i & 1LL) {
         lli z_res = 45LL;
         z_res *= 10LL - n.digits[i];
         z_res *= pow10[i - 1LL];
@@ -121,7 +121,7 @@ lli cnt1(num& n, lli i, lli d) {
     i_res *= sign; sign *= -1LL;
     res += i_res;
 
-    if (i > 0LL and i & 1LL) {
+    if (i & 1LL) {
         lli z_res = 45LL;
         z_res *= d - n.digits[i];
         z_res *= pow10[i - 1LL];

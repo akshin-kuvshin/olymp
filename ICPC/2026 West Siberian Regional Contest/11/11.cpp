@@ -16,7 +16,7 @@ typedef pair<int, int> pi;
 struct Node {
 	pi p;
 	bool fire;
-	int d;
+	int d = -1;
 };
 
 void solve();
@@ -53,7 +53,7 @@ void solve() {
 	queue<Node> q;
 	q.push({ start, false, 0 });
 	for (auto p : fires)
-		q.push({ p, true, -1 });
+		q.push({ .p = p, .fire = true });
 	while (not q.empty()) {
 		auto [p, fire, d] = q.front();
 		q.pop();
@@ -71,18 +71,18 @@ void solve() {
 				if (a[nx][ny] != '.')
 					continue;
 				a[nx][ny] = 'S';
-				q.push({ mp(nx, ny), fire, d });
+				q.push({ mp(nx, ny), false, d });
 			}
 		} else { // fire
 			for (auto [nx, ny] : get_ns(x, y)) {
 				if (a[nx][ny] == 'E') {
-					cout << d << '\n';
+					cout << "-1\n";
 					return;
 				}
 				if (a[nx][ny] == '#' or a[nx][ny] == 'F')
 					continue;
 				a[nx][ny] = 'F';
-				q.push({ mp(nx, ny), fire, d });
+				q.push({ .p = mp(nx, ny), .fire = true });
 			}
 		}
 	}

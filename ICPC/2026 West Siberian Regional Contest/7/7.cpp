@@ -17,7 +17,7 @@ lli state;
 
 void solve();
 lli my_rand(lli a, lli b);
-vector<lli> bp(const vector<lli>& p, lli n, lli a, lli b, lli state_0);
+vector<lli> shake(const vector<lli>& p, lli n, lli a, lli b, lli state_0);
 
 int main() {
     ios::sync_with_stdio(false);
@@ -60,11 +60,11 @@ void solve() {
             large.pb(k2);
     }
 
-    const auto check = bp(p, n, a, b, 1LL);
+    const auto check = shake(p, n, a, b, 1LL);
 
     for (auto k : small)
-        if (bp(p, n, a, b, k + 1LL) == check) {
-            if (k == 2LL && bp(p, n, a, b, 2LL) == check) {
+        if (shake(p, n, a, b, k + 1LL) == check) {
+            if (k == 2LL and shake(p, n, a, b, 2LL) == check) {
                 cout << "1\n";
                 return;
             }
@@ -74,7 +74,7 @@ void solve() {
 
     reverse(large.begin(), large.end());
     for (auto k : large)
-        if (bp(p, n, a, b, k + 1LL) == check) {
+        if (shake(p, n, a, b, k + 1LL) == check) {
             cout << k << '\n';
             return;
         }
@@ -86,7 +86,7 @@ lli my_rand(lli a, lli b) {
     return state = (a * state + b) % MOD;
 }
 
-vector<lli> bp(const vector<lli>& p, lli n, lli a, lli b, lli state_0) {
+vector<lli> shake(const vector<lli>& p, lli n, lli a, lli b, lli state_0) {
     auto c = p;
     state = state_0;
     for (lli i = n - 1LL; i > 0LL; --i) {
